@@ -6,9 +6,9 @@ plugins {
   `maven-publish`
 }
 
-val projectName = "DebugLog"
-val projectDescription = "DebugLog"
-val projectUrl = "github.com/bnorm/debuglog"
+val projectName = "mp-expose"
+val projectDescription = "mp-expose"
+val projectUrl = "github.com/brady-aiello/mp-expose"
 
 val dokkaJar by tasks.creating(Jar::class) {
   group = DOCUMENTATION_GROUP
@@ -51,15 +51,16 @@ publishing {
       }
       developers {
         developer {
-          name.set("Brian Norman")
-          url.set("https://github.com/bnorm")
+          name.set("Brady Aiello")
+          url.set("https://github.com/brady-aiello")
         }
       }
     }
   }
 
   repositories {
-    if (hasProperty("sonatypeUsername") && hasProperty("sonatypePassword")) {
+    mavenLocal()
+/*    if (hasProperty("sonatypeUsername") && hasProperty("sonatypePassword")) {
       maven {
         setUrl(
           if ("SNAPSHOT" in version.toString()) "https://oss.sonatype.org/content/repositories/snapshots"
@@ -70,6 +71,6 @@ publishing {
           password = property("sonatypePassword") as String
         }
       }
-    }
+    }*/
   }
 }

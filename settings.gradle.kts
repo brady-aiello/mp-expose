@@ -1,6 +1,15 @@
-rootProject.name = "debuglog"
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    mavenLocal()
+  }
+}
 
-include(":debuglog-annotation")
-include(":debuglog-gradle")
-include(":debuglog-plugin")
-include(":debuglog-plugin-native")
+rootProject.name = "mp-expose"
+
+include(":mp-expose-annotation")
+include(":mp-expose-gradle")
+include(":mp-expose-plugin")
+include(":mp-expose-plugin-native")
+include(":mp-expose-integration")
+
