@@ -23,15 +23,8 @@ import org.jetbrains.kotlin.name.FqName
 
 class ExposeIrGenerationExtension : IrGenerationExtension {
   override fun generate(moduleFragment: IrModuleFragment, pluginContext: IrPluginContext) {
-    val typeAnyNullable = pluginContext.irBuiltIns.anyNType
-
     val exposeAnnotation = pluginContext.referenceClass(FqName("co.touchlab.expose.Expose"))!!
-    val funPrintln = pluginContext.referenceFunctions(FqName("kotlin.io.println"))
-      .single {
-        val parameters = it.owner.valueParameters
-        parameters.size == 1 && parameters[0].type == typeAnyNullable
-      }
 
-    moduleFragment.transform(ExposeTransformer(pluginContext, exposeAnnotation, funPrintln), null)
+    moduleFragment.transform(ExposeTransformer(exposeAnnotation), null)
   }
 }
