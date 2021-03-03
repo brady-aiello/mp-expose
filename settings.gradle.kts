@@ -1,6 +1,7 @@
 pluginManagement {
   repositories {
     gradlePluginPortal()
+    mavenCentral()
     mavenLocal()
   }
 }
@@ -11,5 +12,5 @@ include(":mp-expose-annotation")
 include(":mp-expose-gradle")
 include(":mp-expose-plugin")
 include(":mp-expose-plugin-native")
-include(":mp-expose-integration")
+// include(":mp-expose-integration")
 

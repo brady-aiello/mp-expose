@@ -1,6 +1,7 @@
 pluginManagement {
   repositories {
     gradlePluginPortal()
+    mavenCentral()
     mavenLocal()
   }
 }
@@ -8,4 +9,5 @@ pluginManagement {
 
 rootProject.name = "mp-expose-integration"
 
-includeBuild("..")
+// Commenting out to force get mp-expose artifacts from local maven
+// includeBuild("..")

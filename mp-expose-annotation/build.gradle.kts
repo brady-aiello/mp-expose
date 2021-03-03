@@ -19,7 +19,11 @@ kotlin {
   val osName = System.getProperty("os.name")
   when {
     "Windows" in osName -> mingwX64("native")
-    "Mac OS" in osName -> macosX64("native")
+    "Mac OS" in osName -> {
+      macosX64("native")
+      iosX64()
+      iosArm64()
+    }
     else -> linuxX64("native")
   }
 
